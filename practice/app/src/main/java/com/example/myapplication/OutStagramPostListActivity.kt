@@ -46,13 +46,8 @@ class OutStagramPostListActivity : AppCompatActivity() {
                             glide
                         )
                         post_recyclerview.adapter = adapter
-                        post_recyclerview.layoutManager =
-                            LinearLayoutManager(this@OutStagramPostListActivity)
-
-
+                        post_recyclerview.layoutManager = LinearLayoutManager(this@OutStagramPostListActivity)
                     }
-
-
                 }
             }
         )
