@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +19,7 @@ class EmailSignupActivity : AppCompatActivity() {
     lateinit var userPassword1View: EditText
     lateinit var userPassword2View: EditText
     lateinit var registerBtn: TextView
+    lateinit var loginBtn: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,12 +27,17 @@ class EmailSignupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_email_signup)
 
         initView(this@EmailSignupActivity)
-        setupListenr()
+        setupListenr(this)
     }
 
-    fun setupListenr() {
+    fun setupListenr(activity : Activity) {
         registerBtn.setOnClickListener {
             register(this@EmailSignupActivity)
+        }
+        loginBtn.setOnClickListener {
+            val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+            val token = sp.getString("login_sp", "")
+            Log.d("abcc", "token : " + token)
         }
     }
 
@@ -38,22 +45,22 @@ class EmailSignupActivity : AppCompatActivity() {
         val username = getUserName()
         val password1 = getUserPassword1()
         val password2 = getUserPassword2()
-        var register = Register(username, password1, password2)
 
-        (application as MasterApplication).service.register(register).enqueue(object :
+        (application as MasterApplication).service.register(
+            username, password1, password2
+        ).enqueue(object :
             Callback<User> {
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Toast.makeText(activity, "가입에 실패 하였습니다.", Toast.LENGTH_LONG).show()
+            }
+
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
-
                     Toast.makeText(activity, "가입에 성공하였습니다.", Toast.LENGTH_LONG).show()
                     val user = response.body()
                     val token = user!!.token!!
                     saveUserToken(token, activity)
                 }
-            }
-
-            override fun onFailure(call: Call<User>, t: Throwable) {
-                Toast.makeText(activity, "가입에 실패하였습니다.", Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -71,6 +78,7 @@ class EmailSignupActivity : AppCompatActivity() {
         userPassword1View = activity.findViewById(R.id.password1_inpubox)
         userPassword2View = activity.findViewById(R.id.password2_inpubox)
         registerBtn = activity.findViewById(R.id.register)
+        loginBtn = activity.findViewById(R.id.login)
     }
 
     fun getUserName(): String {
