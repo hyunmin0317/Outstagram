@@ -27,13 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".EmailSignupActivity" />
-        <activity android:name=".PermissionActivity" />
-        <activity android:name=".RetrofitActivity" />
-        <activity android:name=".NetworkActivity" />
-        <activity android:name=".RealmActivity" />
-        <activity android:name=".SharedPreferenceActivity" />
-        <activity android:name=".ContextActivity" />
-        <activity android:name=".OpenInternet" />
     </application>
 
 </manifest>

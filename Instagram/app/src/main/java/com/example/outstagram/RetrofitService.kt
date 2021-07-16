@@ -21,7 +21,6 @@ interface RetrofitService {
         @Body person: PersonFromServer
     ): Call<PersonFromServer>
 
-
     @POST("user/signup/")
     @FormUrlEncoded
     fun register(

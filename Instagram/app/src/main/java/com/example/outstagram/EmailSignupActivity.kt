@@ -3,12 +3,11 @@ package com.example.outstagram
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,23 +20,28 @@ class EmailSignupActivity : AppCompatActivity() {
     lateinit var registerBtn: TextView
     lateinit var loginBtn: TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_email_signup)
 
-        initView(this@EmailSignupActivity)
-        setupListenr(this)
+        if ((application as MasterApplication).checkIsLogin()) {
+            finish()
+            startActivity(Intent(this, OutStagramPostListActivity::class.java))
+        } else {
+            setContentView(R.layout.activity_email_signup)
+            initView(this@EmailSignupActivity)
+            setupListenr(this)
+        }
     }
 
-    fun setupListenr(activity : Activity) {
+
+    fun setupListenr(activity: Activity) {
         registerBtn.setOnClickListener {
             register(this@EmailSignupActivity)
         }
         loginBtn.setOnClickListener {
-            val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-            val token = sp.getString("login_sp", "")
-            Log.d("abcc", "token : " + token)
+            startActivity(
+                Intent(this@EmailSignupActivity, LoginActivity::class.java)
+            )
         }
     }
 
@@ -60,6 +64,10 @@ class EmailSignupActivity : AppCompatActivity() {
                     val user = response.body()
                     val token = user!!.token!!
                     saveUserToken(token, activity)
+                    (application as MasterApplication).createRetrofit()
+                    activity.startActivity(
+                        Intent(activity, OutStagramPostListActivity::class.java)
+                    )
                 }
             }
         })
@@ -73,7 +81,7 @@ class EmailSignupActivity : AppCompatActivity() {
     }
 
 
-    fun initView(activity : Activity) {
+    fun initView(activity: Activity) {
         usernameView = activity.findViewById(R.id.username_inpubox)
         userPassword1View = activity.findViewById(R.id.password1_inpubox)
         userPassword2View = activity.findViewById(R.id.password2_inpubox)
@@ -92,4 +100,6 @@ class EmailSignupActivity : AppCompatActivity() {
     fun getUserPassword2(): String {
         return userPassword2View.text.toString()
     }
+
+
 }
