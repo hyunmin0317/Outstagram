@@ -22,12 +22,18 @@ interface RetrofitService {
     ): Call<PersonFromServer>
 
     @POST("user/signup/")
-    @FormUrlEncoded
     fun register(
-        @Field("username") usernmae: String,
-        @Field("password1") password1: String,
-        @Field("password2") pasword2: String
+        @Body register: Register
     ): Call<User>
+
+
+//    @POST("user/signup/")
+//    @FormUrlEncoded
+//    fun register(
+//        @Field("username") usernmae: String,
+//        @Field("password1") password1: String,
+//        @Field("password2") pasword2: String
+//    ): Call<User>
 
 
     @POST("user/login/")

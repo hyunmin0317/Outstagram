@@ -10,13 +10,15 @@
         android:supportsRtl="true"
         android:name=".MasterApplication"
         android:theme="@style/Theme.Outstagram">
-        <activity android:name=".EmailSignupActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".EmailSignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
