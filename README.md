@@ -8,17 +8,21 @@
 
 <br>
 
-* ### SingUp
+* ### [APK 파일 다운로드](https://github.com/hyunmin0317/Outstagram/raw/master/Outstagram.apk)
 
-  <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/signup.jpg?raw=true" alt="icon" width="300" />
+* ### 화면 구성
 
-* ### Login
+  * ### SingUp
 
-  <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/login.jpg?raw=true" alt="icon" width="300" />
+    <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/signup.jpg?raw=true" alt="icon" width="300" />
 
-* ### Home
+  * ### Login
 
-  <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/home.jpg?raw=true" alt="icon" width="300" />
+    <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/login.jpg?raw=true" alt="icon" width="300" />
+
+  * ### Home
+
+    <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/home.jpg?raw=true" alt="icon" width="300" />
 
 
 
