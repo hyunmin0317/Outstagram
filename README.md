@@ -4,5 +4,5 @@
 
 ---
 
-<img src="https://github.com/hyunmin0317/Outstagram/blob/master/icon.png?raw=true" alt="outstagram" style="zoom:50%;" />
+![icon](https://github.com/hyunmin0317/Outstagram/blob/master/icon.png?raw=true){: width="50%" height="50%"}
 
