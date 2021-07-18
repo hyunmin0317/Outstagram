@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,6 +46,7 @@ class OutStagramPostListActivity : AppCompatActivity() {
                             LayoutInflater.from(this@OutStagramPostListActivity),
                             glide
                         )
+                        postList.reverse()
                         post_recyclerview.adapter = adapter
                         post_recyclerview.layoutManager = LinearLayoutManager(this@OutStagramPostListActivity)
                     }
