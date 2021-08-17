@@ -1,10 +1,13 @@
 package com.example.outstagram
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_out_stagram_upload.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -21,6 +24,16 @@ class OutStagramUploadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_out_stagram_upload)
+
+        val cameraPermissionCheck = ContextCompat.checkSelfPermission(
+            this@OutStagramUploadActivity,
+            android.Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+
+        // 권한이 없는 경우
+        if (cameraPermissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 1000)
+        }
 
         view_pictures.setOnClickListener {
             getPicture()
