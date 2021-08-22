@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,16 +53,10 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
     fun createList() {
         (application as MasterApplication).service.getUserPostList().enqueue(
             object : Callback<ArrayList<Post>> {
-                override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-                    Log.d("123123", "error")
-                }
-
                 override fun onResponse(
                     call: Call<ArrayList<Post>>,
                     response: Response<ArrayList<Post>>
                 ) {
-                    Log.d("123123", "error  : " + response.body())
-
                     if (response.isSuccessful) {
                         val myPostList = response.body()
                         val adapter = MyPostAdapter(
@@ -69,12 +64,14 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
                             LayoutInflater.from(this@OutStagramMyPostListActivity),
                             glide
                         )
+                        myPostList.reverse()
                         myPostRecyclerView.adapter = adapter
-                        myPostRecyclerView.layoutManager =
-                            LinearLayoutManager(this@OutStagramMyPostListActivity)
-
+                        myPostRecyclerView.layoutManager = LinearLayoutManager(this@OutStagramMyPostListActivity)
                     }
+                }
 
+                override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
+                    Toast.makeText(this@OutStagramMyPostListActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )

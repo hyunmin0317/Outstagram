@@ -31,37 +31,17 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
         glide = Glide.with(this@OutStagramMyPostListActivity)
         createList()
         user_info.setOnClickListener { startActivity(Intent(this, OutStagramUserInfo::class.java)) }
-        all_list.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    OutStagramPostListActivity::class.java
-                )
-            )
-        }
-        upload.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    OutStagramUploadActivity::class.java
-                )
-            )
-        }
+        all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, OutStagramUploadActivity::class.java)) }
     }
 
     fun createList() {
         (application as MasterApplication).service.getUserPostList().enqueue(
             object : Callback<ArrayList<Post>> {
-                override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-                    Log.d("123123", "error")
-                }
-
                 override fun onResponse(
                     call: Call<ArrayList<Post>>,
                     response: Response<ArrayList<Post>>
                 ) {
-                    Log.d("123123", "error  : " + response.body())
-
                     if (response.isSuccessful) {
                         val myPostList = response.body()
                         val adapter = MyPostAdapter(
@@ -70,11 +50,12 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
                             glide
                         )
                         myPostRecyclerView.adapter = adapter
-                        myPostRecyclerView.layoutManager =
-                            LinearLayoutManager(this@OutStagramMyPostListActivity)
-
+                        myPostRecyclerView.layoutManager = LinearLayoutManager(this@OutStagramMyPostListActivity)
                     }
+                }
 
+                override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
+                    Log.d("123123", "error")
                 }
             }
         )

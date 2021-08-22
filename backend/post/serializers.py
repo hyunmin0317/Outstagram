@@ -8,7 +8,8 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = '__all__'
 
-class PostCreateSerializer(serializers.ModelSerializer):
+class CreateSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='user.id')
     class Meta:
         model = Post
         fields = '__all__'

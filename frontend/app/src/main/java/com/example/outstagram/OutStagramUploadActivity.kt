@@ -82,12 +82,7 @@ class OutStagramUploadActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Post>, response: Response<Post>) {
                 if (response.isSuccessful) {
                     finish()
-                    startActivity(
-                        Intent(
-                            this@OutStagramUploadActivity,
-                            OutStagramMyPostListActivity::class.java
-                        )
-                    )
+                    startActivity(Intent(this@OutStagramUploadActivity, OutStagramMyPostListActivity::class.java))
                 } else {
                     Toast.makeText(this@OutStagramUploadActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
                 }

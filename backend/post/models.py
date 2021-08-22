@@ -8,3 +8,6 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now=True)
     content = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.content
