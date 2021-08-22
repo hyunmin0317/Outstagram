@@ -32,9 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:hint="아이디를 입력해주세요"
+            android:hint="아이디 또는 이메일 주소"
             android:background="@drawable/edittext_rounded_corner_rectangle"
             android:textColorHint="#383A3C" />
 
@@ -46,46 +46,50 @@
             android:layout_marginBottom="6dp"
             android:gravity="center"
             android:inputType="textPassword"
-            android:hint="비밀번호를 입력해주세요"
+            android:hint="비밀번호"
             android:background="@drawable/edittext_rounded_corner_rectangle"
             android:textColorHint="#383A3C" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:padding="15dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="로그인"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="계정이 없으신가요?" />
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="#0094f6"
+            android:textSize="15dp"
+            android:text="가입하기" />
 
 
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:background="#AE88F3"
-        android:textColor="#ffffff"
-        android:paddingLeft="32dp"
-        android:paddingTop="16dp"
-        android:paddingRight="32dp"
-        android:paddingBottom="16dp"
-        android:gravity="center"
-        android:text="로그인"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/signup"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_button"
-        android:textColor="#ffffff"
-        android:paddingLeft="32dp"
-        android:gravity="center"
-        android:paddingTop="16dp"
-        android:paddingRight="32dp"
-        android:paddingBottom="16dp"
-        android:text="회원가입"
-        android:textSize="18dp"
-        android:textStyle="bold" />
 
 
 

@@ -48,7 +48,7 @@
             android:gravity="center"
             android:text="로그아웃"
             android:textSize="20dp"
-            android:background="#AE88F3"
+            android:background="@drawable/rounded_button"
             android:textColor="#ffffff"
             android:textStyle="bold" />
 

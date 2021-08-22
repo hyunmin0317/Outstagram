@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.login
+import kotlinx.android.synthetic.main.activity_login.username_inputbox
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
