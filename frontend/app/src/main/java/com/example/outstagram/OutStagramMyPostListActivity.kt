@@ -32,22 +32,8 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
         glide = Glide.with(this@OutStagramMyPostListActivity)
         createList()
         user_info.setOnClickListener { startActivity(Intent(this, OutStagramUserInfo::class.java)) }
-        all_list.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    OutStagramPostListActivity::class.java
-                )
-            )
-        }
-        upload.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    OutStagramUploadActivity::class.java
-                )
-            )
-        }
+        all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, OutStagramUploadActivity::class.java)) }
     }
 
     fun createList() {

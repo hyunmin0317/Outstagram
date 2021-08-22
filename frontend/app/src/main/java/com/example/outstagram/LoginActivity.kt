@@ -50,10 +50,10 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun saveUserToken(email: String, token: String, activity: Activity) {
+    fun saveUserToken(username: String, token: String, activity: Activity) {
         val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val editor = sp.edit()
-        editor.putString("email", email)
+        editor.putString("username", username)
         editor.putString("token", token)
         editor.commit()
     }

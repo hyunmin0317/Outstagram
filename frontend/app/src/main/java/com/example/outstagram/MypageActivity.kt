@@ -26,7 +26,7 @@ class MypageActivity : AppCompatActivity() {
 
         val email = getUserEmail()
         if (email != null)
-            user_email.setText(""+email)
+            username.setText(""+email)
     }
 
     fun getUserEmail(): String? {

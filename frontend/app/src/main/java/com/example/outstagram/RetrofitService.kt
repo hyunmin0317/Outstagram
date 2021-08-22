@@ -33,7 +33,7 @@ interface RetrofitService {
         @Part ("content")requestBody : RequestBody
     ):Call<Post>
 
-    @GET("instagram/post/list/")
+    @GET("post/mylist/")
     fun getUserPostList():Call<ArrayList<Post>>
 
 }

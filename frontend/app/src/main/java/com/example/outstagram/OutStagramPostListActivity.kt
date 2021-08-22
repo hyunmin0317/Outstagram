@@ -28,8 +28,6 @@ class OutStagramPostListActivity : AppCompatActivity() {
 
         glide = Glide.with(this)
 
-
-
         (application as MasterApplication).service.getAllPosts().enqueue(
             object : Callback<ArrayList<Post>> {
                 override fun onResponse(
@@ -56,12 +54,11 @@ class OutStagramPostListActivity : AppCompatActivity() {
                 }
             }
         )
+
         user_info.setOnClickListener { startActivity(Intent(this, OutStagramUserInfo::class.java)) }
         my_list.setOnClickListener { startActivity(Intent(this, OutStagramMyPostListActivity::class.java)) }
         upload.setOnClickListener { startActivity(Intent(this, OutStagramUploadActivity::class.java)) }
     }
-
-
 }
 
 class PostAdapter(
