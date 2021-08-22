@@ -25,17 +25,17 @@ interface RetrofitService {
     ): Call<User>
 
 
-    @GET("instagram/post/list/all/")
+    @GET("post/all/")
     fun getAllPosts(): Call<ArrayList<Post>>
 
     @Multipart
-    @POST("instagram/post/")
+    @POST("post/create/")
     fun uploadPost(
         @Part image : MultipartBody.Part,
         @Part ("content")requestBody : RequestBody
     ):Call<Post>
 
-    @GET("instagram/post/list/")
+    @GET("post/mylist/")
     fun getUserPostList():Call<ArrayList<Post>>
 
 

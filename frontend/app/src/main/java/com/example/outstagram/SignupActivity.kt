@@ -41,7 +41,7 @@ class SignupActivity : AppCompatActivity() {
                         val token = user!!.token!!
                         saveUserToken(username, token, activity)
                         (application as MasterApplication).createRetrofit()
-                        activity.startActivity(Intent(activity, MypageActivity::class.java))
+                        activity.startActivity(Intent(activity, OutStagramPostListActivity::class.java))
                     } else {
                         Toast.makeText(activity, "사용할 수 없는 아이디입니다.", Toast.LENGTH_LONG).show()
                     }

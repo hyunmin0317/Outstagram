@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                         (application as MasterApplication).createRetrofit()
 
                         Toast.makeText(activity, "로그인 하셨습니다.", Toast.LENGTH_LONG).show()
-                        startActivity(Intent(activity, MypageActivity::class.java))
+                        startActivity(Intent(activity, OutStagramPostListActivity::class.java))
                     } else {
                         Toast.makeText(activity, "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.", Toast.LENGTH_LONG).show()
                     }
