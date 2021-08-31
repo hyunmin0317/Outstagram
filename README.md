@@ -8,7 +8,7 @@
 
 <br>
 
-* ### [APK 파일 다운로드](https://github.com/hyunmin0317/Outstagram/raw/master/Outstagram.apk)
+* ### [APK 파일 다운로드](https://drive.google.com/file/d/1_bxyLBd--L9aXFRdgFQqzzGaU1FTnRqK/view?usp=sharing)
 
 * ### 화면 구성
 
