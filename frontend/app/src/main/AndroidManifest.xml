@@ -24,7 +24,6 @@
         </activity>
         <activity android:name="com.example.outstagram.SignupActivity" />
         <activity android:name="com.example.outstagram.LoginActivity" />
-        <activity android:name="com.example.outstagram.MypageActivity" />
         <activity android:name="com.example.outstagram.OutStagramUploadActivity" />
         <activity android:name="com.example.outstagram.OutStagramMyPostListActivity" />
         <activity android:name="com.example.outstagram.OutStagramUserInfo" />
