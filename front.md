@@ -38,7 +38,7 @@
 [✏️ API](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)
 </h3>  
 
-<img src="https://user-images.githubusercontent.com/63601183/132092719-b3fd4ace-de1c-48bd-b4ab-7d6afa1894e0.png" width="1500" height="500">
+<img src="https://user-images.githubusercontent.com/63601183/132092719-b3fd4ace-de1c-48bd-b4ab-7d6afa1894e0.png" width="1600" height="440">
 
   [💫 **Front-end 바로 가기**](https://sage-vest-248.notion.site/470cf9eb408b40329562cb8fdd3a661a?v=c0b85b64a71f448e91abccf7f44ef064)
 </div>
