@@ -34,8 +34,10 @@
 
   <br>
 
-  <h3> 
-  [✏️ API](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)</h3>  
+  <h3>[✏️ API](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)</h3>  
+
+<p>
+
 
 * <h4>User</h4>
 
@@ -80,7 +82,7 @@
   | 타이머 기록 저장  |  POST  |       /timer       |
   |  현재 누적 시간   |  GET   |       /timer       |
 
- 
+ </p>
 
   [💫 **Front-end 바로 가기**](https://sage-vest-248.notion.site/470cf9eb408b40329562cb8fdd3a661a?v=c0b85b64a71f448e91abccf7f44ef064)
 </div>
