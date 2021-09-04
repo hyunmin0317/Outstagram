@@ -24,10 +24,19 @@
 
   <br>  <h3> 
 
-  [📃 기능 명세 ](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)
+  📃 서비스 기능
   </h3> 
 
+|   기능   |                            Timer                             |                          To Do List                          |                            Follow                            |
+| :------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 실행화면 | <img width="412" src="https://raw.githubusercontent.com/naver/egjs-view360/master/demo/assets/img/panoviewer_thumbnail.gif"> | <img width="300" src="https://raw.githubusercontent.com/naver/egjs-view360/master/demo/assets/img/basic_spinview_thumb.gif"> | ![](https://user-images.githubusercontent.com/3903575/38671092-6a4494a0-3e85-11e8-9eca-9619a2545801.gif) |
+
+
+
+
+
 <h3>
+
 
 [⚙️ ERD](https://sage-vest-248.notion.site/ERD-d2521e7a8dd0474db7d936bb2785bd69) </h3> 
 
@@ -36,10 +45,11 @@
   <br>
 
 <h3>
+
 [✏️ API](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)
 </h3>  
 
-<img src="https://user-images.githubusercontent.com/63601183/132092719-b3fd4ace-de1c-48bd-b4ab-7d6afa1894e0.png" width="1600" height="400">
+<img src="https://user-images.githubusercontent.com/63601183/132092719-b3fd4ace-de1c-48bd-b4ab-7d6afa1894e0.png" width="2000" height="500">
 
   [💫 **Front-end 바로 가기**](https://sage-vest-248.notion.site/470cf9eb408b40329562cb8fdd3a661a?v=c0b85b64a71f448e91abccf7f44ef064)
 </div>
