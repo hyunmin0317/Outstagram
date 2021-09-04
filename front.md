@@ -12,7 +12,7 @@
 |                            **BE**                            |                            **BE**                            |                            **FE**                            |                            **FE**                            |                            **FE**                            |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="https://user-images.githubusercontent.com/50178026/131377055-3f1c0610-b771-4390-ae00-8469ad6789b3.png" width="100" height ="100"/> | <img src="https://user-images.githubusercontent.com/50178026/131377055-3f1c0610-b771-4390-ae00-8469ad6789b3.png" width="100" height ="100" /> | <img src="https://user-images.githubusercontent.com/50178026/131377055-3f1c0610-b771-4390-ae00-8469ad6789b3.png" width="100" height ="100"/> | <img src="https://user-images.githubusercontent.com/50178026/131377055-3f1c0610-b771-4390-ae00-8469ad6789b3.png" width="100" height ="100" /> | <img src="https://user-images.githubusercontent.com/50178026/131377055-3f1c0610-b771-4390-ae00-8469ad6789b3.png" width="100" height ="100"/> |
-|[jimin3263](https://github.com/jimin3263)|[jimin3263](https://github.com/jimin3263)|[leemijung](https://github.com/leemijung)|[wooseok9872](https://github.com/wooseok9872)|[hyunmin0317](https://github.com/hyunmin0317)| ㄱ
+|[jimin3263](https://github.com/jimin3263)|[DongwookKim0823](https://github.com/DongwookKim0823)|[leemijung](https://github.com/leemijung)|[wooseok9872](https://github.com/wooseok9872)|[hyunmin0317](https://github.com/hyunmin0317)| ㄱ
 
   **공부 계획**을 세우고 **시간**을 측정하고 친구와 **공유**도 해보아요 !
 
@@ -39,10 +39,10 @@
   :mobile_phone_off: 서비스 화면 소개 
   </h3> 
 
-|   기능   |                        회원 관리 화면                        |                          메인 화면                           |                        공부 계획 화면                        |                         팔로우 화면                          |
-| :------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 실행화면 | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094086-52e2c68c-3dea-4fb3-b1a8-b549cfa05ed0.png"> | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094107-a171e33f-7dc0-4c77-ad80-c222da50724d.png"> | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094101-657294ca-3e83-4a43-829e-a6c0972bd1ee.png"> | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094111-cce6ff33-23f1-4f56-be96-24470161286b.png"> |
-|   기능   |                  회원가입, 로그인, 로그아웃                  |           Timer 시작 및 정지, 실시간 공부시간 기록           |                투 두 리스트 조회, 생성, 삭제                 |                    팔로우, 회원 검색 기능                    |
+|  화면  |                        회원 관리 화면                        |                          메인 화면                           |                        공부 계획 화면                        |                         팔로우 화면                          |
+| :----: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 앱화면 | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094086-52e2c68c-3dea-4fb3-b1a8-b549cfa05ed0.png"> | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094107-a171e33f-7dc0-4c77-ad80-c222da50724d.png"> | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094101-657294ca-3e83-4a43-829e-a6c0972bd1ee.png"> | <img width="300" src="https://user-images.githubusercontent.com/63601183/132094111-cce6ff33-23f1-4f56-be96-24470161286b.png"> |
+|  기능  |                  회원가입, 로그인, 로그아웃                  |           Timer 시작 및 정지, 실시간 공부시간 기록           |                투 두 리스트 조회, 생성, 삭제                 |                    팔로우, 회원 검색 기능                    |
 
 <br>
 
