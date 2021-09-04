@@ -27,14 +27,15 @@
   [📃 기능 명세 ](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)
   </h3> 
 
+<h3>
 
-  <h3> ⚙️ ERD </h3> 
+[⚙️ ERD](https://sage-vest-248.notion.site/ERD-d2521e7a8dd0474db7d936bb2785bd69) </h3> 
+
   <img src="https://user-images.githubusercontent.com/63601183/132013934-6fbe0021-4b0a-4c75-913e-6218deca0b37.png" width="80%" height="100%">
 
   <br>
 
 <h3>
-
 [✏️ API](https://sage-vest-248.notion.site/API-055f1970b9294364b0cb151cd0233b35)
 </h3>  
 
