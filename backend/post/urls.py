@@ -1,10 +1,12 @@
 # api/urls.py
 from django.urls import path
-from .views import HelloAPI, CreateAPI, ListAPI, MyListAPI
+from .views import CreateAPI, ListAPI, MyListAPI, DetailAPI, DeleteAPI, UpdateAPI
 
 urlpatterns = [
-    path("hello/", HelloAPI),
-    path("all/", ListAPI.as_view()),
-    path("create/", CreateAPI.as_view()),
-    path("mylist/", MyListAPI.as_view())
+    path('all/', ListAPI.as_view()),
+    path('create/', CreateAPI.as_view()),
+    path('mylist/', MyListAPI.as_view()),
+    path('<int:pk>/', DetailAPI.as_view()),
+    path('<int:pk>/update/', UpdateAPI.as_view()),
+    path('<int:pk>/delete/', DeleteAPI.as_view())
 ]
