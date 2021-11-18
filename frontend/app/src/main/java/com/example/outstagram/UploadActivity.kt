@@ -1,6 +1,5 @@
 package com.example.outstagram
 
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -10,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_out_stagram_upload.*
+import kotlinx.android.synthetic.main.activity_upload.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -19,16 +18,16 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 
-class OutStagramUploadActivity : AppCompatActivity() {
+class UploadActivity : AppCompatActivity() {
 
     lateinit var filePath: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_out_stagram_upload)
+        setContentView(R.layout.activity_upload)
 
         val cameraPermissionCheck = ContextCompat.checkSelfPermission(
-            this@OutStagramUploadActivity,
+            this@UploadActivity,
             android.Manifest.permission.READ_EXTERNAL_STORAGE
         )
 
@@ -42,7 +41,7 @@ class OutStagramUploadActivity : AppCompatActivity() {
 
         all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
         my_list.setOnClickListener { startActivity(Intent(this, OutStagramMyPostListActivity::class.java)) }
-        user_info.setOnClickListener { startActivity(Intent(this, OutStagramUserInfo::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
     }
 
 
@@ -83,14 +82,14 @@ class OutStagramUploadActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Post>, response: Response<Post>) {
                 if (response.isSuccessful) {
                     finish()
-                    startActivity(Intent(this@OutStagramUploadActivity, OutStagramMyPostListActivity::class.java))
+                    startActivity(Intent(this@UploadActivity, OutStagramMyPostListActivity::class.java))
                 } else {
-                    Toast.makeText(this@OutStagramUploadActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@UploadActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<Post>, t: Throwable) {
-                Toast.makeText(this@OutStagramUploadActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@UploadActivity, "서버 오류", Toast.LENGTH_LONG).show()
             }
         })
     }

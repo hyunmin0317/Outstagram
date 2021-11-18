@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import kotlinx.android.synthetic.main.activity_out_stagram_post_list.*
+import kotlinx.android.synthetic.main.activity_post_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,7 +24,7 @@ class OutStagramPostListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_out_stagram_post_list)
+        setContentView(R.layout.activity_post_list)
 
         glide = Glide.with(this)
 
@@ -55,9 +55,9 @@ class OutStagramPostListActivity : AppCompatActivity() {
             }
         )
 
-        user_info.setOnClickListener { startActivity(Intent(this, OutStagramUserInfo::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
         my_list.setOnClickListener { startActivity(Intent(this, OutStagramMyPostListActivity::class.java)) }
-        upload.setOnClickListener { startActivity(Intent(this, OutStagramUploadActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
     }
 }
 

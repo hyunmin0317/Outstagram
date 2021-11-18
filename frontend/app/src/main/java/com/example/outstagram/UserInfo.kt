@@ -4,13 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_out_stagram_user_info.*
+import kotlinx.android.synthetic.main.activity_user_info.*
 
-class OutStagramUserInfo : AppCompatActivity() {
+class UserInfo : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_out_stagram_user_info)
+        setContentView(R.layout.activity_user_info)
 
         val username = getUserName()
         if (username != null)
@@ -18,7 +18,7 @@ class OutStagramUserInfo : AppCompatActivity() {
 
         all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
         my_list.setOnClickListener { startActivity(Intent(this, OutStagramMyPostListActivity::class.java)) }
-        upload.setOnClickListener { startActivity(Intent(this, OutStagramUploadActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
 
         logout.setOnClickListener {
             val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)

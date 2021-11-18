@@ -27,6 +27,30 @@
             android:layout_marginBottom="6dp"
             android:textColor="#000000"/>
 
+        <TextView
+            android:id="@+id/delete"
+            android:text="삭제"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/rounded_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="@font/acube"
+            android:padding="5dp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/update"
+            android:text="수정"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/rounded_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="@font/acube"
+            android:padding="5dp"
+            android:textColor="#ffffff" />
+
     </LinearLayout>
 
     <TextView

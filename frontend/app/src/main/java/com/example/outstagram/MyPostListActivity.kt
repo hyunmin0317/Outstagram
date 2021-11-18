@@ -1,8 +1,8 @@
 package com.example.outstagram
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
-import kotlinx.android.synthetic.main.activity_out_stagram_my_post_list.*
+import kotlinx.android.synthetic.main.activity_my_post_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,14 +26,14 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_out_stagram_my_post_list)
+        setContentView(R.layout.activity_my_post_list)
 
         myPostRecyclerView = mypost_recyclerview
         glide = Glide.with(this@OutStagramMyPostListActivity)
         createList()
-        user_info.setOnClickListener { startActivity(Intent(this, OutStagramUserInfo::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
         all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
-        upload.setOnClickListener { startActivity(Intent(this, OutStagramUploadActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
     }
 
     fun createList() {
@@ -48,7 +48,8 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
                         val adapter = MyPostAdapter(
                             myPostList!!,
                             LayoutInflater.from(this@OutStagramMyPostListActivity),
-                            glide
+                            glide,
+                            this@OutStagramMyPostListActivity
                         )
                         myPostList.reverse()
                         myPostRecyclerView.adapter = adapter
@@ -69,7 +70,9 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
 class MyPostAdapter(
     var postList: ArrayList<Post>,
     val inflater: LayoutInflater,
-    val glide: RequestManager
+    val glide: RequestManager,
+    val activity: Activity
+
 ) : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -81,11 +84,42 @@ class MyPostAdapter(
             postOwner = itemView.findViewById(R.id.post_owner)
             postImage = itemView.findViewById(R.id.post_img)
             postContent = itemView.findViewById(R.id.post_content)
+
+            itemView.findViewById<TextView>(R.id.delete).setOnClickListener {
+                (activity.application as MasterApplication).service.deletePost(
+                    postList.get(adapterPosition).id!!
+                ).enqueue(object : Callback<Post> {
+
+                    override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(activity, "삭제되었습니다.", Toast.LENGTH_LONG).show()
+                            activity.startActivity(
+                                Intent(
+                                    activity,
+                                    OutStagramMyPostListActivity::class.java
+                                )
+                            )
+                        } else {
+                            Toast.makeText(activity, "삭제 오류", Toast.LENGTH_LONG).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Post>, t: Throwable) {
+                        Toast.makeText(activity, "서버 오류", Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
+
+            itemView.findViewById<TextView>(R.id.update).setOnClickListener {
+                val intent = Intent(activity, UpdateActivity::class.java)
+                intent.putExtra("pk", postList.get(adapterPosition).id)
+                activity.startActivity(intent)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.outstagram_item_view, parent, false)
+        val view = inflater.inflate(R.layout.myitem_view, parent, false)
         return ViewHolder(view)
     }
 
