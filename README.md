@@ -23,6 +23,18 @@
   * ### Home
 
     <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/home.jpg?raw=true" alt="icon" width="300" />
+    
+  * ### Mypage
+  
+    <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/mypage.jpg?raw=true" alt="icon" width="300" />
+  
+  * ### Upload
+  
+    <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/upload.jpg?raw=true" alt="icon" width="300" />
+  
+  * ### Setting
+  
+    <img src="https://github.com/hyunmin0317/Outstagram/blob/master/github/setting.jpg?raw=true" alt="icon" width="300" />
 
 
 
