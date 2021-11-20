@@ -42,6 +42,13 @@ class SignupActivity : AppCompatActivity() {
                         saveUserToken(username, token, activity)
                         (application as MasterApplication).createRetrofit()
                         activity.startActivity(Intent(activity, PostListActivity::class.java))
+
+                        (application as MasterApplication).service.uploadProfile(username).enqueue(object :
+                            Callback<Profile> {
+                            override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+
+                            override fun onFailure(call: Call<Profile>, t: Throwable) {}
+                        })
                     } else {
                         Toast.makeText(activity, "사용할 수 없는 아이디입니다.", Toast.LENGTH_LONG).show()
                     }

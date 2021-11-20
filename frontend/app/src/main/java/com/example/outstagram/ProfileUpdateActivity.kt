@@ -79,7 +79,7 @@ class ProfileUpdateActivity : AppCompatActivity() {
         var owner = getUserName()
 
         if (owner == null)
-                owner = ""
+            owner = ""
 
         (application as MasterApplication).service.updateProfile(
             owner!!, part

@@ -63,6 +63,11 @@ interface RetrofitService {
         @Path("owner") owner: String
     ):Call<Profile>
 
+    @DELETE("user/profile/{owner}/delete/")
+    fun deleteProfile(
+        @Path("owner") owner: String
+    ):Call<Profile>
+
     @Multipart
     @PUT("user/profile/{owner}/update/")
     fun updateProfile(

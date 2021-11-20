@@ -31,7 +31,7 @@ class UserInfo : AppCompatActivity() {
                     val profile = response.body()
 
                     if (profile!!.image == null)
-
+                        setImage("https://github.com/hyunmin0317/Outstagram/blob/master/github/basic.jpg?raw=true")
                     else
                         setImage(profile!!.image)
                 } else {
@@ -48,6 +48,22 @@ class UserInfo : AppCompatActivity() {
         my_list.setOnClickListener { startActivity(Intent(this, MyPostListActivity::class.java)) }
         upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
         profile_update.setOnClickListener { startActivity(Intent(this, ProfileUpdateActivity::class.java)) }
+
+        profile_delete.setOnClickListener {
+            (application as MasterApplication).service.deleteProfile(username).enqueue(object :
+                Callback<Profile> {
+                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+
+                override fun onFailure(call: Call<Profile>, t: Throwable) {}
+            })
+            (application as MasterApplication).service.uploadProfile(username).enqueue(object :
+                Callback<Profile> {
+                override fun onResponse(call: Call<Profile>, response: Response<Profile>) {}
+
+                override fun onFailure(call: Call<Profile>, t: Throwable) {}
+            })
+            startActivity(Intent(this, UserInfo::class.java))
+        }
 
         logout.setOnClickListener {
             val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
