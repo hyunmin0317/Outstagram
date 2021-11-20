@@ -26,19 +26,43 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <TextView
             android:id="@+id/user"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="100dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/acube"
-            android:textSize="40dp"
+            android:textSize="35dp"
             android:textColor="#000000"
             android:text="TextView" />
 
+        <ImageView
+            android:id="@+id/profile_img"
+            android:layout_margin="20dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="6dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
         <TextView
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/profile_update"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="프로필 사진 수정"
+            android:textSize="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:id="@+id/logout"

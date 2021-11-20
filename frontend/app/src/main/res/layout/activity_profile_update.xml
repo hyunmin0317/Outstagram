@@ -20,7 +20,6 @@
             android:fontFamily="@font/billabong"
             android:gravity="center" />
     </LinearLayout>
-
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -28,28 +27,17 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="80dp"
         android:gravity="center"
-        android:text="새 게시물"
+        android:text="프로필 사진 수정"
         android:fontFamily="@font/acube"
         android:textColor="#000000"
         android:textSize="36dp" />
-
-    <EditText
-        android:id="@+id/content_input"
-        android:layout_below="@+id/name"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_width="match_parent"
-        android:background="@drawable/edittext_rounded_corner_rectangle"
-        android:layout_height="300dp"
-        android:hint="내용을 작성해주세요" />
 
     <TextView
         android:id="@+id/view_pictures"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/content_input"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_button"

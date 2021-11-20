@@ -15,19 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.outstagram.IntroActivity">
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.outstagram.SignupActivity" />
-        <activity android:name="com.example.outstagram.LoginActivity" />
-        <activity android:name="com.example.outstagram.UploadActivity" />
-        <activity android:name="com.example.outstagram.OutStagramMyPostListActivity" />
-        <activity android:name="com.example.outstagram.UserInfo" />
-        <activity android:name="com.example.outstagram.OutStagramPostListActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".UploadActivity" />
+        <activity android:name=".MyPostListActivity" />
+        <activity android:name=".PostListActivity" />
+        <activity android:name=".UserInfo" />
+        <activity android:name=".ProfileUpdateActivity" />
         <activity android:name=".UpdateActivity" />
     </application>
 

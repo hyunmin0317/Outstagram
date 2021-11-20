@@ -39,8 +39,8 @@ class UpdateActivity : AppCompatActivity() {
         view_pictures.setOnClickListener { getPicture() }
         upload_post.setOnClickListener { uploadPost() }
 
-        all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
-        my_list.setOnClickListener { startActivity(Intent(this, OutStagramMyPostListActivity::class.java)) }
+        all_list.setOnClickListener { startActivity(Intent(this, PostListActivity::class.java)) }
+        my_list.setOnClickListener { startActivity(Intent(this, MyPostListActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
     }
 
@@ -84,7 +84,7 @@ class UpdateActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     finish()
                     Toast.makeText(this@UpdateActivity, "수정되었습니다.", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this@UpdateActivity, OutStagramMyPostListActivity::class.java))
+                    startActivity(Intent(this@UpdateActivity, MyPostListActivity::class.java))
                 } else {
                     Toast.makeText(this@UpdateActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
                 }

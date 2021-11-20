@@ -1,15 +1,16 @@
 package com.example.outstagram
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_upload.*
+import kotlinx.android.synthetic.main.activity_profile_update.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -18,16 +19,16 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 
-class UploadActivity : AppCompatActivity() {
-
+class ProfileUpdateActivity : AppCompatActivity() {
     lateinit var filePath: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_upload)
+        setContentView(R.layout.activity_profile_update)
+
 
         val cameraPermissionCheck = ContextCompat.checkSelfPermission(
-            this@UploadActivity,
+            this@ProfileUpdateActivity,
             android.Manifest.permission.READ_EXTERNAL_STORAGE
         )
 
@@ -41,6 +42,7 @@ class UploadActivity : AppCompatActivity() {
 
         all_list.setOnClickListener { startActivity(Intent(this, PostListActivity::class.java)) }
         my_list.setOnClickListener { startActivity(Intent(this, MyPostListActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
     }
 
@@ -74,28 +76,34 @@ class UploadActivity : AppCompatActivity() {
         val file = File(filePath)
         val fileRequestBody = RequestBody.create(MediaType.parse("image/*"), file)
         val part = MultipartBody.Part.createFormData("image", file.name, fileRequestBody)
-        val content = RequestBody.create(MediaType.parse("text/plain"), getContent())
+        var owner = getUserName()
 
-        (application as MasterApplication).service.uploadPost(
-            part, content
-        ).enqueue(object : Callback<Post> {
-            override fun onResponse(call: Call<Post>, response: Response<Post>) {
+        if (owner == null)
+                owner = ""
+
+        (application as MasterApplication).service.updateProfile(
+            owner!!, part
+        ).enqueue(object : Callback<Profile> {
+            override fun onResponse(call: Call<Profile>, response: Response<Profile>) {
                 if (response.isSuccessful) {
                     finish()
-                    startActivity(Intent(this@UploadActivity, MyPostListActivity::class.java))
+                    Toast.makeText(this@ProfileUpdateActivity, "저장되었습니다.", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this@ProfileUpdateActivity, UserInfo::class.java))
                 } else {
-                    Toast.makeText(this@UploadActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ProfileUpdateActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
                 }
             }
 
-            override fun onFailure(call: Call<Post>, t: Throwable) {
-                Toast.makeText(this@UploadActivity, "서버 오류", Toast.LENGTH_LONG).show()
+            override fun onFailure(call: Call<Profile>, t: Throwable) {
+                Toast.makeText(this@ProfileUpdateActivity, "서버 오류", Toast.LENGTH_LONG).show()
             }
         })
     }
 
-    fun getContent(): String {
-        return content_input.text.toString()
+    fun getUserName(): String? {
+        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val username = sp.getString("username", "null")
+        if (username == "null") return null
+        else return username
     }
-
 }

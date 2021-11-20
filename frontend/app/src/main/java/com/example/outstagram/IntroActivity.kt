@@ -13,7 +13,7 @@ class IntroActivity : AppCompatActivity() {
         var handler = Handler()
         if ((application as MasterApplication).checkIsLogin()) {
             handler.postDelayed({
-                var intent = Intent(this, OutStagramPostListActivity::class.java)
+                var intent = Intent(this, PostListActivity::class.java)
                 startActivity(intent)
             }, 1000)
         } else {

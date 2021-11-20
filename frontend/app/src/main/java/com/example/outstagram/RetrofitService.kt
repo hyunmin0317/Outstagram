@@ -1,5 +1,8 @@
 package com.example.outstagram
 
+import com.example.outstagram.Post
+import com.example.outstagram.Profile
+import com.example.outstagram.User
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -48,4 +51,22 @@ interface RetrofitService {
         @Part image: MultipartBody.Part,
         @Part ("content") requestBody: RequestBody
     ):Call<Post>
+
+    @POST("user/profile/create/")
+    @FormUrlEncoded
+    fun uploadProfile(
+        @Field("username") username: String
+    ):Call<Profile>
+
+    @GET("user/profile/{owner}/")
+    fun getProfile(
+        @Path("owner") owner: String
+    ):Call<Profile>
+
+    @Multipart
+    @PUT("user/profile/{owner}/update/")
+    fun updateProfile(
+        @Path("owner") owner: String,
+        @Part image: MultipartBody.Part
+    ):Call<Profile>
 }

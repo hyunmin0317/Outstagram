@@ -18,7 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class OutStagramPostListActivity : AppCompatActivity() {
+class PostListActivity : AppCompatActivity() {
 
     lateinit var glide: RequestManager
 
@@ -38,25 +38,25 @@ class OutStagramPostListActivity : AppCompatActivity() {
                         val postList = response.body()
                         val adapter = PostAdapter(
                             postList!!,
-                            LayoutInflater.from(this@OutStagramPostListActivity),
+                            LayoutInflater.from(this@PostListActivity),
                             glide
                         )
                         postList.reverse()
                         post_recyclerview.adapter = adapter
-                        post_recyclerview.layoutManager = LinearLayoutManager(this@OutStagramPostListActivity)
+                        post_recyclerview.layoutManager = LinearLayoutManager(this@PostListActivity)
                     } else {
-                        Toast.makeText(this@OutStagramPostListActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@PostListActivity, "400 Bad Request", Toast.LENGTH_LONG).show()
                     }
                 }
 
                 override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-                    Toast.makeText(this@OutStagramPostListActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@PostListActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
 
         user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
-        my_list.setOnClickListener { startActivity(Intent(this, OutStagramMyPostListActivity::class.java)) }
+        my_list.setOnClickListener { startActivity(Intent(this, MyPostListActivity::class.java)) }
         upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
     }
 }

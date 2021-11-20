@@ -19,7 +19,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class OutStagramMyPostListActivity : AppCompatActivity() {
+class MyPostListActivity : AppCompatActivity() {
 
     lateinit var myPostRecyclerView: RecyclerView
     lateinit var glide: RequestManager
@@ -29,10 +29,10 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_my_post_list)
 
         myPostRecyclerView = mypost_recyclerview
-        glide = Glide.with(this@OutStagramMyPostListActivity)
+        glide = Glide.with(this@MyPostListActivity)
         createList()
         user_info.setOnClickListener { startActivity(Intent(this, UserInfo::class.java)) }
-        all_list.setOnClickListener { startActivity(Intent(this, OutStagramPostListActivity::class.java)) }
+        all_list.setOnClickListener { startActivity(Intent(this, PostListActivity::class.java)) }
         upload.setOnClickListener { startActivity(Intent(this, UploadActivity::class.java)) }
     }
 
@@ -47,18 +47,18 @@ class OutStagramMyPostListActivity : AppCompatActivity() {
                         val myPostList = response.body()
                         val adapter = MyPostAdapter(
                             myPostList!!,
-                            LayoutInflater.from(this@OutStagramMyPostListActivity),
+                            LayoutInflater.from(this@MyPostListActivity),
                             glide,
-                            this@OutStagramMyPostListActivity
+                            this@MyPostListActivity
                         )
                         myPostList.reverse()
                         myPostRecyclerView.adapter = adapter
-                        myPostRecyclerView.layoutManager = LinearLayoutManager(this@OutStagramMyPostListActivity)
+                        myPostRecyclerView.layoutManager = LinearLayoutManager(this@MyPostListActivity)
                     }
                 }
 
                 override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-                    Toast.makeText(this@OutStagramMyPostListActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MyPostListActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -96,7 +96,7 @@ class MyPostAdapter(
                             activity.startActivity(
                                 Intent(
                                     activity,
-                                    OutStagramMyPostListActivity::class.java
+                                    MyPostListActivity::class.java
                                 )
                             )
                         } else {
