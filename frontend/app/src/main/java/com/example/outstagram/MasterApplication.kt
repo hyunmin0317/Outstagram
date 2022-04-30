@@ -44,8 +44,8 @@ class MasterApplication : Application() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://outstagram.pythonanywhere.com/")
-//            .baseUrl("http://10.0.2.2:8000")
+//            .baseUrl("https://outstagram.pythonanywhere.com/")
+            .baseUrl("http://10.0.2.2:8000")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
